@@ -1,3 +1,20 @@
-"dependencies": {
+{
+  "name": "doge",
+  "version": "0.3.0",
+  "description": "doge game 2",
+  "engines": {
+    "node": "10.x"
+  },
+  "main": "game.js",
+  "scripts": {
+    "start": "you-win game.js",
+    "test": "you-win game.js"
+  },
+  "dependencies": {
     "you-win": "0.1.2"
+},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dogeComix/doge"
+  },
 }
