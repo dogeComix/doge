@@ -42,7 +42,6 @@ world.onTap(e=>{
     bullet.posX=bike.posX
     bullet.posY=bike.posY
     bullet.forever(()=>{
-        if (bullet.posY>115)
         bullet.posY+=2
 
         
