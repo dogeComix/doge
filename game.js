@@ -9,7 +9,9 @@ await uw.begin()
 var world = new World
 world.title = ''
 var score=0
+var levelNumber=1
 var level=new text
+level.label=levelNumber
 level.opacity=0.5
 world.background = 'green'
 
@@ -151,6 +153,6 @@ world.background = 'green'
     world.background= 'blue'
 }
     createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
-    level++
+    levelNumber++
 },1750);
 }
