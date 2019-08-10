@@ -37,7 +37,7 @@ var score=0
 var dead=false
 
 world.onTap(e=>{    
-    var expiryTime=new Date(new Date().getTime() - 1000)
+    var expiryTime=new Date(new Date().getTime() - 500)
     if (dead==false && shotTime<expiryTime){  
         shotTime=new Date()
         var bullet=new Sprite
