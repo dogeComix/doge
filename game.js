@@ -12,7 +12,6 @@ var score=0
 var levelNumber=1
 var level=new Text
 level.label=levelNumber
-level.opacity=0.5
 level.scale=3
 world.background = 'green'
 
