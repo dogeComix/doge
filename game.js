@@ -10,9 +10,10 @@ var world = new World
 world.title = ''
 var score=0
 var levelNumber=1
-var level=new text
+var level=new Text
 level.label=levelNumber
 level.opacity=0.5
+level.scale=3
 world.background = 'green'
 
 var today = new Date(); 
@@ -151,8 +152,8 @@ setInterval(()=>{
 world.background = 'green'
 } else{
     world.background= 'blue'
+    levelNumber++
 }
     createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
-    levelNumber++
 },1750);
 }
