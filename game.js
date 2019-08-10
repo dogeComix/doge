@@ -142,4 +142,4 @@ label.forever(()=>{
 
 setInterval(()=>{
     createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
-},1250);
+},1750);
