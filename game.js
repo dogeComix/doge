@@ -6,14 +6,11 @@ const {Phone, World, Sprite, Text, Polygon} = uw
 await uw.begin()
 
 // Make the world
-var score=0
 var world = new World
 world.title = ''
-if (score<5){
+var score=0
 world.background = 'green'
-} else{
-    world.background= 'blue'
-}
+
 var today = new Date(); 
 var shotTime = new Date(today.getTime()-1000)
 
@@ -146,6 +143,11 @@ label.forever(()=>{
 
 if (dead==false){
 setInterval(()=>{
+    if (score<5){
+world.background = 'green'
+} else{
+    world.background= 'blue'
+}
     createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
 },1750);
 }
