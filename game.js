@@ -80,7 +80,7 @@ function createEnemy(yPos,xPos,speed,){
             enemy.posY-=0.1
             
         },5000);
-        for(var other of enemy.getTouching()){
+        for(var other of enemy.getTouchingFast()){
             if (other.costume=='👾') {
                 enemy.costume='💥'
                 other.destroy()
@@ -91,7 +91,7 @@ function createEnemy(yPos,xPos,speed,){
                 
             }
         }
-        for(var other of enemy.getTouching()){
+        for(var other of enemy.getTouchingFast()){
             if (other.costume=='🏍') {
                 other.costume='💥'
                 other.scale=3
