@@ -9,6 +9,7 @@ await uw.begin()
 var world = new World
 world.title = ''
 world.background = 'green'
+var shotTime=new Date(today.getTime()-1000)
 
 // Now we can start making Sprites!
 world.width=300
@@ -35,18 +36,19 @@ var score=0
 var dead=false
 
 world.onTap(e=>{
-    if (dead==false){
-    var bullet=new Sprite
-    bullet.costume='👾'
-    bullet.scale=0.25
-    bullet.posX=bike.posX
-    bullet.posY=bike.posY
-    bullet.forever(()=>{
-        bullet.posY+=2
-
-        
-    })
-        }
+    var expiryTime=new Date(today.getTime() - 1000);
+    if (dead==false && shotTime<expiryTime){
+        shotTime=new Date(today.getTime())
+        var bullet=new Sprite
+        bullet.costume='👾'
+        bullet.scale=0.25
+        bullet.posX=bike.posX
+        bullet.posY=bike.posY
+        bullet.forever(()=>{
+            bullet.posY+=2
+            
+        })
+    }
         
 })
 
