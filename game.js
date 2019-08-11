@@ -150,11 +150,12 @@ label.forever(()=>{
     label.text='score:'+score
 })
 
-world.forever(()=>{
-    if (dead==false){
+if (dead==false){
         setInterval(()=>{
         createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
         },1750);
+
+world.forever(()=>{
     if (levelScore>5){
         levelNumber++
         level.text='level: '+levelNumber
