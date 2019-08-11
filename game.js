@@ -11,7 +11,7 @@ world.title = ''
 var score=0
 var levelNumber=1
 var level=new Text
-level.label=levelNumber
+level.label='level: '+levelNumber
 level.scale=3
 world.background = 'green'
 
@@ -147,11 +147,10 @@ label.forever(()=>{
 
 if (dead==false){
 setInterval(()=>{
-    if (score<5){
-world.background = 'green'
-} else{
-    world.background= 'blue'
+    if (score<5){} 
+    else{
     levelNumber++
+    score=0
 }
     createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
 },1750);
