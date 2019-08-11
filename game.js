@@ -24,7 +24,7 @@ world.height=460
 level.text='level: '+levelNumber
 level.scale=2
 level.posX=150
-lavel.posY=230
+level.posY=230
 level.opacity=0.5
 
 var xVel = 1
