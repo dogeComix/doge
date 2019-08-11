@@ -163,5 +163,4 @@ world.forever(()=>{
         levelScore=0
         world.background='blue'
         }
-    }
-})
+    })
