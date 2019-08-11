@@ -22,9 +22,10 @@ world.width=300
 world.height=460
 
 level.text='level: '+levelNumber
-level.scale=3
+level.scale=2
 level.posX=150
 lavel.posY=230
+level.opacity=0.5
 
 var xVel = 1
 var bike=new Sprite
