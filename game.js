@@ -8,12 +8,10 @@ await uw.begin()
 // Make the world
 var world = new World
 world.title = ''
+world.background = 'green'
 var score=0
 var levelNumber=1
-var level=new Text
-level.label='level: '+levelNumber
-level.scale=3
-world.background = 'green'
+var levelScore=0
 
 var today = new Date(); 
 var shotTime = new Date(today.getTime()-1000)
@@ -21,6 +19,12 @@ var shotTime = new Date(today.getTime()-1000)
 // Now we can start making Sprites!
 world.width=300
 world.height=460
+
+var level=new Text
+level.label='level: '+levelNumber
+level.scale=3
+level.posX=world.width/2
+lavel.posY=world.height/2
 
 var xVel = 1
 var bike=new Sprite
@@ -85,6 +89,7 @@ function createEnemy(yPos,xPos,speed,){
                 enemy.costume='💥'
                 other.destroy()
                 score++
+                levelScore++
                 setTimeout(() => {
                     enemy.destroy()
                 }, 500);
@@ -147,10 +152,9 @@ label.forever(()=>{
 
 if (dead==false){
 setInterval(()=>{
-    if (score<5){} 
-    else{
+    if (levelScore>5){
     levelNumber++
-    score=0
+    levelScore=0
 }
     createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
 },1750);
