@@ -10,6 +10,7 @@ var world = new World
 world.title = ''
 world.background = 'green'
 var score=0
+var level=new Text
 var levelNumber=1
 var levelScore=0
 
@@ -20,11 +21,10 @@ var shotTime = new Date(today.getTime()-1000)
 world.width=300
 world.height=460
 
-var level=new Text
-level.label='level: '+levelNumber
+level.text='level: '+levelNumber
 level.scale=3
-level.posX=world.width/2
-lavel.posY=world.height/2
+level.posX=150
+lavel.posY=230
 
 var xVel = 1
 var bike=new Sprite
@@ -152,10 +152,10 @@ label.forever(()=>{
 
 if (dead==false){
 setInterval(()=>{
-    if (levelScore>5){
-    levelNumber++
-    levelScore=0
-}
     createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
 },1750);
+    if (levelScore>5){
+        levelNumber++
+        levelScore=0
+    }
 }
