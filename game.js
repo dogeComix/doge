@@ -148,16 +148,18 @@ label.posY=10
 
 label.forever(()=>{
     label.text='score:'+score
-    
 })
 
-if (dead==false){
-setInterval(()=>{
-    createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
-},1750);
+world.forever(()=>{
+    if (dead==false){
+        setInterval(()=>{
+        createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
+        },1750);
     if (levelScore>5){
         levelNumber++
+        level.text='level: '+levelNumber
         levelScore=0
         world.background='blue'
+        }
     }
-}
+})
