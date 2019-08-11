@@ -18,8 +18,8 @@ var today = new Date();
 var shotTime = new Date(today.getTime()-1000)
 
 // Now we can start making Sprites!
-//world.width=300
-//world.height=460
+world.width=300
+world.height=460
 
 level.text='level: '+levelNumber
 level.scale=2
