@@ -157,6 +157,6 @@ setInterval(()=>{
 },1750);
     if (levelScore>5){
         levelNumber++
-        levelScore=0
+        levelScore=0        
     }
 }
