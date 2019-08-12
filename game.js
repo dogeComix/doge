@@ -157,10 +157,10 @@ if (dead==false){
     }
 
 world.forever(()=>{
-    if (levelScore>5){
+    if (levelScore>10){
         levelNumber++
         level.text='level: '+levelNumber
         levelScore=1
-        world.background=rgba(uw.randomInt(0,225),uw.randomInt(0,225),uw.randomInt(0,225),1)
+        world.background='rgba(uw.randomInt(0,225),uw.randomInt(0,225),uw.randomInt(0,225),1)'
         }
     })
