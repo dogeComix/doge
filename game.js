@@ -12,7 +12,7 @@ world.background = 'green'
 var score=0
 var level=new Text
 var levelNumber=1
-var levelScore=0
+var levelScore=1
 
 var today = new Date(); 
 var shotTime = new Date(today.getTime()-1000)
