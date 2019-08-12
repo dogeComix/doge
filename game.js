@@ -161,6 +161,6 @@ world.forever(()=>{
         levelNumber++
         level.text='level: '+levelNumber
         levelScore=0
-        world.background='rgba(uw.randomInt(0,225),uw.randomInt(0,225),uw.randomInt(0,225))'
+        world.background='rgba(uw.randomInt(0,225),uw.randomInt(0,225),uw.randomInt(0,225),1)'
         }
     })
