@@ -166,7 +166,7 @@ setInterval(()=>{
             levelNumber++
             level.text='level: '+levelNumber
             levelScore=1
-    world.background = rainbowStop(levelNumber*0.5)
+    world.background = rainbowStop(levelNumber/10)
 
             }
         })
