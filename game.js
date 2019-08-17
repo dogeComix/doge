@@ -97,11 +97,12 @@ function createEnemy(yPos,xPos,speed,){
                 
             }
         }
-        for(var other of enemy.getTouchingFast()){
+        for(let other of enemy.getTouchingFast()){
             if (other.costume=='🏍') {
                 other.costume='💥'
                 other.scale=3
                 dead=true
+                var hiscoreText=new Text
                 setTimeout(() => { 
                     other.destroy()
                     var gameOver=new Text
@@ -117,7 +118,6 @@ function createEnemy(yPos,xPos,speed,){
                         highScore=score
                         localStorage.setItem('highScore',highScore)   
                     }
-                    var hiscoreText=new Text
                     hiscoreText.text='highscore:'+highScore
                     hiscoreText.fill='red'
                     
@@ -150,24 +150,25 @@ label.forever(()=>{
     label.text='score:'+score
 })
 
-if (dead==false){
-        setInterval(()=>{
-        createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
-    },1750);
+function rainbowStop(h) 
+    {
+    let f= (n,k=(n+h*12)%12) => .5-.5*Math.max(Math.min(k-3,9-k,1),-1);  
+    let rgb2hex = (r,g,b) => "#"+[r,g,b].map(x=>Math.round(x*255).toString(16).padStart(2,0)).join('');
+    return ( rgb2hex(f(0), f(8), f(4)) );
     }
 
-world.forever(()=>{
-    if (levelScore>10){
-        levelNumber++
-        level.text='level: '+levelNumber
-        levelScore=1
-        function rainbowStop(h) 
-{
-  let f= (n,k=(n+h*12)%12) => .5-.5*Math.max(Math.min(k-3,9-k,1),-1);  
-  let rgb2hex = (r,g,b) => "#"+[r,g,b].map(x=>Math.round(x*255).toString(16).padStart(2,0)).join('');
-  return ( rgb2hex(f(0), f(8), f(4)) );
-}
-world.background = levelNumber/100
+setInterval(()=>{
+    if (dead==false){
+            createEnemy(uw.randomInt(300,400),uw.randomInt(0,world.width),uw.randomInt(0.1,0.4))
 
-        }
-    })
+    world.forever(()=>{
+        if (levelScore>10){
+            levelNumber++
+            level.text='level: '+levelNumber
+            levelScore=1
+    world.background = rainbowStop(levelNumber/100)
+
+            }
+        })
+    }
+},2000);
