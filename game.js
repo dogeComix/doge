@@ -13,6 +13,7 @@ var score=0
 var level=new Text
 var levelNumber=1
 var levelScore=1
+var ammo=5
 
 var today = new Date(); 
 var shotTime = new Date(today.getTime()-1000)
@@ -46,22 +47,26 @@ bike.forever(()=>{
 
 var dead=false
 
-world.onTap(e=>{    
-    var expiryTime=new Date(new Date().getTime() - 500)
-    if (dead==false && shotTime<expiryTime){  
-        shotTime=new Date()
-        var bullet=new Sprite
-        bullet.costume='👾'
-        bullet.scale=0.25
-        bullet.posX=bike.posX
-        bullet.posY=bike.posY
-        bullet.forever(()=>{
-            bullet.posY+=2
-        
-        })
+
+world.onTap(e=>{
+    if (ammo>0){
+        var expiryTime=new Date(new Date().getTime() - 500)
+        if (dead==false && shotTime<expiryTime){  
+            shotTime=new Date()
+            var bullet=new Sprite
+            ammo--
+            bullet.costume='👾'
+            bullet.scale=0.25
+            bullet.posX=bike.posX
+            bullet.posY=bike.posY
+            bullet.forever(()=>{
+                bullet.posY+=2
+            
+            })
+        }
     }
-        
 })
+
 
 function createEnemy(yPos,xPos,speed,){
     
