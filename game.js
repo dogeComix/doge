@@ -151,12 +151,12 @@ createEnemy(420,uw.randomInt(0,world.width),0.2)
 var label=new Text
 label.posX=150
 label.posY=10
-ammo.posX=112.5
-ammo.posY=10
+ammoText.posX=112.5
+ammoText.posY=10
 
 label.forever(()=>{
     label.text='score:'+score
-    ammoText.text='ammo'+ammo
+    ammoText.text='ammo: '+ammo
 })
 
 function rainbowStop(h) 
