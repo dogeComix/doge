@@ -81,7 +81,7 @@ function createEnemy(yPos,xPos,speed,){
         enemy.posX+=speed
         if (world.width<enemy.posX){
             speed=speed*-1
-            
+
         }
         if (0>enemy.posX){
             speed=speed*-1
@@ -136,7 +136,7 @@ function createEnemy(yPos,xPos,speed,){
     })
 }
 
-ammo.forever(()=>{
+world.forever(()=>{
     setInterval(()=>{
         ammo++
     },1000);
