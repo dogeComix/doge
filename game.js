@@ -136,9 +136,11 @@ function createEnemy(yPos,xPos,speed,){
     })
 }
 
-setInterval(()=>{
-    ammo++
-},1000);
+if (ammo<5){
+    setInterval(()=>{
+        ammo++
+    },1000);
+}
 
 createEnemy(400,17,0.2)
 createEnemy(350,220,0.4)
