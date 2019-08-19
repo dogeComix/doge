@@ -136,6 +136,12 @@ function createEnemy(yPos,xPos,speed,){
     })
 }
 
+ammo.forever(()=>{
+    setInterval(()=>{
+        ammo++
+    },1000);
+})
+
 createEnemy(400,17,0.2)
 createEnemy(350,220,0.4)
 createEnemy(375,uw.randomInt(0,world.width),0.1)
