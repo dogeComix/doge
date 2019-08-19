@@ -136,11 +136,9 @@ function createEnemy(yPos,xPos,speed,){
     })
 }
 
-world.forever(()=>{
-    setInterval(()=>{
-        ammo++
-    },1000);
-})
+setInterval(()=>{
+    ammo++
+},1000);
 
 createEnemy(400,17,0.2)
 createEnemy(350,220,0.4)
