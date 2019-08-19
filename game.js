@@ -151,7 +151,7 @@ createEnemy(420,uw.randomInt(0,world.width),0.2)
 var label=new Text
 label.posX=150
 label.posY=10
-ammoText.posX=112.5
+ammoText.posX=(world.width/4)*3
 ammoText.posY=10
 
 label.forever(()=>{
