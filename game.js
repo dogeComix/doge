@@ -136,7 +136,7 @@ function createEnemy(yPos,xPos,speed,){
     })
 }
 
-setInterval(()=>{
+ammo.setInterval(()=>{
     if (ammo>5){       
         ammo++
     }
