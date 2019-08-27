@@ -137,11 +137,9 @@ function createEnemy(yPos,xPos,speed,){
 }
 
 setInterval(()=>{
-    world.forever(()=>{
-        if (ammo>5){       
-            ammo++
-        }
-    })
+    if (ammo>5){       
+        ammo++
+    }
 },1000);
 
 
