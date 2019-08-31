@@ -167,6 +167,10 @@ createEnemy(310,39,0.1)
 createEnemy(300,uw.randomInt(0,world.width),0.4)
 createEnemy(410,132,0.1)
 createEnemy(420,uw.randomInt(0,world.width),0.2)
+
+createAmmo(uw.randomInt(0,world.width),uw.randomInt(300,400))
+
+
 var label=new Text
 label.posX=(world.width/3)-10
 label.posY=10
