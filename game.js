@@ -69,6 +69,18 @@ world.onTap(e=>{
 })
 
 
+function createAmmo(xPos,yPos,){
+    var AmmoCrate=new Sprite
+    AmmoCrate.costume='🖲️'
+    AmmoCrate.posY=yPos
+    AmmoCrate.posX=xPos
+    AmmoCrate.forever(()=>{
+        setInterval(()=>{
+            AmmoCrate.posY-=0.5
+        })
+    },3000);
+}
+
 function createEnemy(yPos,xPos,speed,){
     
     var enemy=new Sprite
